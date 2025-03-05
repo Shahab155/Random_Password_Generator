@@ -20,13 +20,13 @@ def generate_password(length,use_digits,use_special):
     return ''.join(random.choice(characters) for _ in range(length))
 #  underscore(_)  tells python that loop does not have length(specified) 
 
-st.sidebar.title("💥Welcome to my new App")
+st.sidebar.title("💥Welcome to my App")
 name = st.sidebar.text_input("Name: ")
 email = st.sidebar.text_input("Email: ")
-message = st.sidebar._text_area("Comments: ")
+message = st.sidebar.text_area("Comments: ")
 
 if st.sidebar.button("Submit"):
-    st.sidebar.success("Your meesage is recieved!")
+    st.sidebar.success(f"Welcome! {name}")
 
 
 st.title("🔒 Random Password Generator")
@@ -41,7 +41,7 @@ if st.button("Generate Password"):
     password = generate_password(length, use_digits, use_special)
     st.text_input("Generated Password: ", password, type="password")
     st.success("Password generated Successfully✅")
-  
+    st.toast("🔔Password is ready!")
     
 st.subheader("Build with 💖 by Shahab")
 
